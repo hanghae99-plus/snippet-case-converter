@@ -9,4 +9,17 @@
       [snippet-case-converter] Provides frequently used function snippets and conversion function between cases.
     ]]></description>
     <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action
+            id="Case.Convert"
+            class="io.snippetconverter.CaseAction"
+            text="Case Converter"
+            description="Text Convert to snake case or camel case"
+        >
+            <add-to-group group-id="CodeFormatGroup" anchor="after" relative-to-action="ReformatCode"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="before" relative-to-action="ReformatCode"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="control meta U"/>
+        </action>
+    </actions>
 </idea-plugin>

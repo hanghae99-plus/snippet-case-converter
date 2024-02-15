@@ -1,4 +1,4 @@
-package io.snippetconverter;
+package io.hanghae99plus.snippetCaseConverter.caseConverter;
 
 public class ConvertUtil {
 

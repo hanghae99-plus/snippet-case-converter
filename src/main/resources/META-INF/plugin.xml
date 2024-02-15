@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>io.hanghae99plus.snippetCaseConverter</id>
-    <name>snippet-case-converter</name>
+    <name>snippetCaseConverter</name>
     <version>1.0</version>
     <vendor email="hanghae99ah@gmail.com" url="https://github.com/hanghae99-plus/snippet-case-converter">
         hanghae99-plus
@@ -11,15 +11,47 @@
     <depends>com.intellij.modules.platform</depends>
 
     <actions>
-        <action
-            id="Case.Convert"
-            class="io.snippetconverter.CaseAction"
-            text="Case Converter"
-            description="Text Convert to snake case or camel case"
-        >
-            <add-to-group group-id="CodeFormatGroup" anchor="after" relative-to-action="ReformatCode"/>
-            <add-to-group group-id="EditorPopupMenu" anchor="before" relative-to-action="ReformatCode"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="control meta U"/>
-        </action>
+        <!-- Define a group for our plugin's actions -->
+        <group id="SnippetCaseConverterGroup" text="Snippet Case Converter"
+               description="Snippet and Case Conversion Actions" popup="true">
+            <action
+                    id="HelloWorld"
+                    class="io.hanghae99plus.snippetCaseConverter.sample.SamplePluginAction"
+                    text="Hello World"
+                    description="Shows a Hello World dialog."
+            >
+            </action>
+            <action
+                    id="Case.Convert"
+                    class="io.hanghae99plus.snippetCaseConverter.caseConverter.CaseAction"
+                    text="Case Converter"
+                    description="Text Convert to snake case or camel case"
+            >
+                <keyboard-shortcut keymap="$default" first-keystroke="control meta U"/>
+                <!-- macOS -->
+                <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta U"/>
+                <!-- Windows/Linux -->
+                <keyboard-shortcut keymap="Default for XWin" first-keystroke="control alt U"/>
+            </action>
+            <action
+                    id="Snippet"
+                    class="io.hanghae99plus.snippetCaseConverter.snippet.SnippetAction"
+                    text="Snippet"
+                    description="Snippets"
+            >
+                <keyboard-shortcut keymap="$default" first-keystroke="control meta Y"/>
+                <!-- macOS -->
+                <keyboard-shortcut keymap="Mac OS X" first-keystroke="meta Y"/>
+                <!-- Windows/Linux -->
+                <keyboard-shortcut keymap="Default for XWin" first-keystroke="control alt Y"/>
+            </action>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </group>
     </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <completion.contributor
+                implementationClass="io.hanghae99plus.snippetCaseConverter.snippet.completion.CompletionContributorImpl"/>
+    </extensions>
+
 </idea-plugin>

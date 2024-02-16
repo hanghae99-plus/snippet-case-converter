@@ -1,9 +1,9 @@
 <idea-plugin>
     <id>io.hanghae99plus.snippetCaseConverter</id>
     <name>snippetCaseConverter</name>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <vendor email="hanghae99ah@gmail.com" url="https://github.com/hanghae99-plus/snippet-case-converter">
-        hanghae99-plus
+        alison&hongmo
     </vendor>
     <description><![CDATA[
       Enhance your coding experience in IntelliJ IDEA with the Snippet and Case Converter Plugin.

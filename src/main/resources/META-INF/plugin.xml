@@ -6,7 +6,9 @@
         hanghae99-plus
     </vendor>
     <description><![CDATA[
-      [snippet-case-converter] Provides frequently used function snippets and conversion function between cases.
+      Enhance your coding experience in IntelliJ IDEA with the Snippet and Case Converter Plugin.
+
+      This tool offers quick access to frequently used code snippets and facilitates seamless conversion between snake_case and camelCase. Ideal for boosting productivity, it allows for easy snippet insertion via context menu or keyboard shortcuts (`control meta Y` for macOS, `control alt Y` for Windows/Linux) and case conversion (`control meta U` for macOS, `control alt U` for Windows/Linux). Extendable and customizable, it's designed to streamline your development workflow.
     ]]></description>
     <depends>com.intellij.modules.platform</depends>
 
